@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PersonalTracker</class>
+ <widget class="QMainWindow" name="PersonalTracker">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>658</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PersonalTracker</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>658</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPersonal_Finance_Tracker">
+    <property name="title">
+     <string>Personal Finance Tracker</string>
+    </property>
+   </widget>
+   <addaction name="menuPersonal_Finance_Tracker"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

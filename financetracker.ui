@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FInanceTracker</class>
+ <widget class="QMainWindow" name="FInanceTracker">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>768</width>
+    <height>482</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IDR Personal Finance Manager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow { background-color: #121212; }
+QGroupBox { color: #ffffff; font-weight: bold; border: 1px solid #333; margin-top: 15px; padding: 10px; border-radius: 8px; }
+QLabel { color: #bbb; font-size: 10pt; }
+QLineEdit, QComboBox, QDateEdit { background-color: #1e1e1e; color: white; border: 1px solid #333; padding: 6px; border-radius: 4px; }
+QPushButton { background-color: #0078d4; color: white; border-radius: 4px; padding: 8px; font-weight: bold; }
+QPushButton:hover { background-color: #005a9e; }
+QTableWidget { background-color: #1e1e1e; color: white; gridline-color: #333; border-radius: 8px; }
+QHeaderView::section { background-color: #252525; color: white; padding: 5px; border: 1px solid #121212; }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="summaryGroup">
+      <property name="title">
+       <string>Financial Summary</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="totalIncomeLabel">
+         <property name="styleSheet">
+          <string notr="true">color: #4caf50; font-size: 15pt; font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Income: Rp 0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>30</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="totalExpenseLabel">
+         <property name="styleSheet">
+          <string notr="true">color: #f44336; font-size: 15pt; font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Expenses: Rp 0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="balanceLabel">
+         <property name="styleSheet">
+          <string notr="true">font-size: 15pt; font-weight: bold; padding: 8px; border-radius: 6px; color: white; background-color: #2e7d32;</string>
+         </property>
+         <property name="text">
+          <string>Balance: Rp 0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="inputGroup">
+      <property name="title">
+       <string>Add Transaction</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Date</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QDateEdit" name="dateEdit">
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="typeCombo">
+         <item>
+          <property name="text">
+           <string>Expense</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Income</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Category</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QComboBox" name="categoryCombo">
+         <item>
+          <property name="text">
+           <string>Food</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Transport</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Bills</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Shopping</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Salary</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Investment</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Entertainment</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Other</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Amount</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="amountEdit">
+         <property name="placeholderText">
+          <string>Amount (Rp)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Notes</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLineEdit" name="descriptionEdit">
+         <property name="placeholderText">
+          <string>Description (Optional)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="addBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Add Record</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QChartView" name="chartView">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>280</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="transactionTable">
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Category</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Amount</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="deleteBtn">
+        <property name="styleSheet">
+         <string notr="true">background-color: #d32f2f;</string>
+        </property>
+        <property name="text">
+         <string>Delete Selected</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exportBtn">
+        <property name="text">
+         <string>Export CSV</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtCharts</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
